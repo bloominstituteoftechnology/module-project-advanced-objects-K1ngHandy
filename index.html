@@ -39,7 +39,6 @@
           }
         }
       }
-      console.log(PeterPan);
 
       // 👉 CHALLENGE 2
       // 🧠 Build an AirPlane class. This class allows to instantiate airplanes.
@@ -116,7 +115,18 @@
       //   minusThree.count() // returns "Liftoff!"
       //   minusThree.count() // returns null
       //   minusThree.count() // returns null
-      class CountDown {}
+      class CountDown {
+        constructor(count) {
+          this.count = count;
+        }
+        count() {
+          if (this.count > 0) {
+            this.count--;
+          } else {
+            return "Liftoff!";
+          }
+        }
+      }
 
       // 🧪 TESTS, do not work below this line
       // 🧪 TESTS, do not work below this line
