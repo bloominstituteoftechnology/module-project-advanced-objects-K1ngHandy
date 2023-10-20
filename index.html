@@ -50,7 +50,27 @@
       // 🧠 Planes have a `down` method, which takes a number of meters as its argument.
       // 🧠 Calling `down` changes the `altitude` prop appropriately and returns the updated `altitude`.
       // 🧠 If calling `down` would cause the plane to go below altitude zero, `altitude` is set to 0 and the string "CRASH!" is returned.
-      class AirPlane {}
+      class AirPlane {
+        constructor(model) {
+          this.model = model;
+          this.altitude = 0;
+        }
+        up(meters) {
+          this.altitude += meters;
+          return this.altitude;
+        }
+        down(meters) {
+          if (this.altitude > 0) {
+            if ((this.altitude -= meters > 0)) {
+              return (this.altitude += meters);
+            } else {
+              this.altitude = 0;
+              return "CRASH!";
+            }
+          }
+        }
+      }
+      // console.log(AirPlane.down(100));
 
       // 👉 CHALLENGE 3
       // 🧠 Build a Bulb class.
