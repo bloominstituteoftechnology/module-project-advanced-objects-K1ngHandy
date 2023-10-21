@@ -59,17 +59,15 @@
           return this.altitude;
         }
         down(meters) {
-          if (this.altitude > 0) {
-            if ((this.altitude -= meters > 0)) {
-              return (this.altitude += meters);
-            } else {
-              this.altitude = 0;
-              return "CRASH!";
-            }
+          if (meters > this.altitude) {
+            this.altitude = 0;
+            return "CRASH!";
+          } else {
+            this.altitude -= meters;
+            return this.altitude;
           }
         }
       }
-      // console.log(AirPlane.down(100));
 
       // 👉 CHALLENGE 3
       // 🧠 Build a Bulb class.
@@ -120,14 +118,16 @@
           this.count = count;
         }
         count() {
-          console.log(this.count);
-          while (this.count > 0) {
-            if (this.count-- > 0) {
-              return `${this.count}!`;
-            } else {
-              return "Liftoff!";
-            }
-            count--;
+          let counting = [];
+
+          if (count === 0) {
+            return `Liftoff!`;
+          } else if (count < 0) {
+            return null;
+          } else if (count > 0) {
+            console.log(count);
+            counting.push(this.count);
+            return counting;
           }
         }
       }
