@@ -114,22 +114,20 @@
       //   minusThree.count() // returns null
       //   minusThree.count() // returns null
       class CountDown {
-        constructor(count) {
-          this.count = count;
-        }
-        count() {
-          let counting = [];
-
-          if (count === 0) {
-            return `Liftoff!`;
-          } else if (count < 0) {
-            return null;
-          } else if (count > 0) {
-            console.log(count);
-            counting.push(this.count);
-            return counting;
+        constructor(number) {
+          this.number = number;
           }
-        }
+          count() {
+            if (this.number === 0) {
+              return `Liftoff!`;
+            } else if (this.number < 0) {
+              return null;
+            } else if (this.number > 0) {
+              this.number--;
+              return `${this.number + 1}!`;
+            }
+        //   }
+        }   
       }
 
       // 🧪 TESTS, do not work below this line
